@@ -1,0 +1,56 @@
+<video id="meuVideo" width="700" height="450" controls controlslist="nodownload">
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+    Seu browser não suporta a tag de video.
+</video>
+
+<div wm-progresso="meuVideo" class="progresso">
+    <div></div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso{
+        background-color: rgb(155, 155, 155);
+        height: 15px;
+        width: 665px;
+        border: solid 1px #444;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 16px;
+    }
+    .progresso > div {
+        background-color: rgb(219, 219, 219);
+        color: rgb(255, 255, 255);
+        height: 100%;
+        text-align: center;
+        font-size: 14px;
+        width: 30%;
+    }
+    div > button:hover{
+        background-color: #dedede;
+    }
+</style>
+
+<!-- Configurações pra fazer o botão de pausa e play funcionarem de acordo com ID -->
+<script>
+    function configurarVideo(id){
+        const video = document.getElementById(id)
+        video.oncontextmenu = () => false
+
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play()
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+    
+        setInterval(() => {
+            const percentual = (video.currentTime / video.duration) * 100
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`)
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%`
+        }, 200)
+    }
+    configurarVideo('meuVideo')
+</script>
+

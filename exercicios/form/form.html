@@ -1,0 +1,62 @@
+<h1>Formulário</h1>
+
+<form method="POST">
+    <input type="hidden" name="id" value="3">
+    <input type="text" name="nome">
+    <input type="password" name="senha">
+    <textarea name="bio" cols="30" rows="10"></textarea>
+    <div>
+        <input type="radio" name="tipo" value="admin"> Admin
+        <input type="radio" name="tipo" value="regular"> Regular
+        <input type="radio" name="tipo" value="professor"> Professor
+    </div>
+    <div>
+        <input type="checkbox" name="Ativo"> Ativo
+    </div>
+
+    <select id="estado" name="estado">
+        <option value="">Selecione</option>
+        <option value="AC">Acre</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="PR">Paraná</option>
+        <option value="RS">Rio Grande do Sul</option>
+    </select>
+
+    <select name="interesses" multiple size="6">
+        <option value="">Nenhum</option>
+        <option value="Surf">Surf</option>
+        <option value="Academia">Academia</option>
+        <option value="Séries">Séries</option>
+        <option value="Filmes">Filmes</option>
+        <option value="Desenho">Desenhos</option>
+        <option value="Esportes">Esportes</option>
+    </select>
+
+    <button formaction="http://localhost:3003/usuarios">Incluir</button>
+    <!-- Usado para alterar um usuario com id 3 -->
+    <button formaction="http://localhost:3003/usuarios/3">Alterar</button>
+    
+</form>
+
+<style>
+    input, textarea, select{
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+    }
+    #estado:hover{
+        background-color: #dedede;
+    }
+    input[type=radio],
+    input[type=checkbox]{
+        display: inline
+    }
+    button{
+        font-size: 15px;
+        font-weight: bold;
+    }
+    button:hover{
+        background-color: #dedede;
+    }
+</style>

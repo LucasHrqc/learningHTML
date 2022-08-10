@@ -1,0 +1,76 @@
+<!-- thead = Cabeçalho ou primeira linha da tabela
+     tbody = inicio do corpo da tabela 
+     tfoot = rodapé ou última linha da tabela 
+     tr = Table row = Linha
+     th = Table head = para inserir dados do cabeçalho 
+     td = Table data = dados dentro da tabela -->
+
+<table>
+    <caption>Produtos</caption>
+    <thead> <!-- Area do cabeçalho da tabela -->
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>iPad</td>
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr>
+            <td>Samsung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td id="total" colspan="3">Total</td>
+            <td id="vtotal">37637,00</td>
+        </tr>
+    </tfoot>
+</table><br>
+
+<style>
+    /* Removendo a borda */
+    caption{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    table{
+        border-collapse: collapse;
+    }
+    /* Adicionando espaços entre componentes do table head e table data */
+    th, td {
+        padding: 10px;
+        border-bottom: solid 1px #444;
+        border-left: solid 1px #444;
+        border-right: solid 1px #444;
+        border-top: solid 1px #444;
+        text-align: center;
+    }
+    /* Linha abaixo do table row dentro do table head */
+    thead tr {
+        background-color: rgb(228, 235, 255);
+        border-bottom: solid 1px #444;
+    }
+    /* Dentro do table body, nas table rows quando o mouse passar por cima (hover)*/
+    tbody tr:hover {
+        background-color: #dedede
+    }
+    tfoot{
+        font-weight: bold;
+        border-bottom: solid 1px #444;
+    }
+    #total, #vtotal{
+        text-align: left;
+    }
+</style>
+
+<a href="index.html" style="font-size: 20px;">Pagina Inicial</a>
